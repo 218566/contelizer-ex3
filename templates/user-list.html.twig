@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    {% for user in users %}
+        <div>
+            <span>{{ user.id }}</span>
+            <span>{{ user.name }}</span>
+            <span>{{ user.email }}</span>
+            <span>{{ user.gender }}</span>
+            <span>{{ user.status }}</span>
+            <span>{{ user.created_at }}</span>
+            <span>{{ user.updated_at }}</span>
+        </div>
+    {% endfor %}
+    </body>
+</html>
