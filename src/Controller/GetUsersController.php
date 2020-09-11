@@ -73,7 +73,7 @@ class GetUsersController extends AbstractController
 
 
         $parameters = $request->query->all();
-
+        $searchedUser = NULL;
         if (isset($parameters['form']['name'])) {
             $name = $parameters['form']['name'];
 
@@ -82,12 +82,8 @@ class GetUsersController extends AbstractController
                     $searchedUser = $user;
                 }
             }
-            dump($searchedUser);
-            die;
         }
-        else {
-            echo "Nie wyszukano użytkownika";
-        }
+
         $form = $this->createFormBuilder()
             ->add('name', TextType::class)
             ->add('search', SubmitType::class, ['label' => 'Search'])
@@ -97,6 +93,7 @@ class GetUsersController extends AbstractController
 
         return $this->render('form/search-form.html.twig', [
             'search_form' => $form->createView(),
+            'searchedUser' => $searchedUser,
         ]);
         //dump($searchedUser);
         //die;

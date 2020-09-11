@@ -1,2 +1,16 @@
 
 {{ form(search_form) }}
+
+<div>
+    {% if searchedUser %}
+        <span>{{ searchedUser.id }}</span>
+        <span>{{ searchedUser.name }}</span>
+        <span>{{ searchedUser.email }}</span>
+        <span>{{ searchedUser.gender }}</span>
+        <span>{{ searchedUser.status }}</span>
+        <span>{{ searchedUser.created_at }}</span>
+        <span>{{ searchedUser.updated_at }}</span>
+    {% else %}
+    <span>NIe znaleziono użytkownika</span>
+    {% endif %}
+</div>
