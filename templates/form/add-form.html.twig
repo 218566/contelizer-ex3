@@ -1,0 +1,17 @@
+
+
+<body>
+
+<div>
+    {{ form(add_form) }}
+</div>
+<span>
+    {% if form_data %}
+    <p>{{ form_data.name }} {{ form_data.gender }} {{ form_data.email }} {{ form_data.status }}</p>
+    {% else %}
+        <p>Form is empty!</p>
+    {% endif %}
+</span>
+
+
+</body>
